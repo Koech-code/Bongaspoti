@@ -1,39 +1,32 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function RegistrationForm() {
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  const [formData, setFormData] = useState({
-    email: "",
-    username: "",
-    password: "",
-  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch('http://127.0.0.1:8000/api/register/', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    // Handle the response from Django here
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    const url = 'http://127.0.0.1:8000/api/register/';
+    const data = { username: username, email, password: password };
+    try {
+      const response = await axios.post(url, data);
+      localStorage.setItem('token', response.data.token);
+      console.log(response.data);
+      // Redirect to login on success
+      window.location.href = '/profiles';
+      alert('Register successful');
+    } 
+    catch (error) {
+      console.error(error);
+      alert('Failed to Register');
+    }
   };
 
 return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto shadow-lg rounded-lg mt-4">
+    <form onSubmit={handleSubmit} className="max-w-lg mx-auto shadow-lg rounded-lg mt-4 pl-4 pr-4 pb-4 pt-4">
       <div className="mb-4">
         <label htmlFor="username" className="block font-medium mb-2">
           Username
@@ -42,10 +35,10 @@ return (
           type="text"
           id="username"
           name="username"
-          value={formData.username}
-          onChange={handleInputChange}
+          value={username}
+          onChange={(event) => setUsername(event.target.value)} 
           required
-          className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2"
+          className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
         />
       </div>
       <div className="mb-4">
@@ -56,10 +49,10 @@ return (
           type="email"
           id="email"
           name="email"
-          value={formData.email}
-          onChange={handleInputChange}
+          value={email}
+          onChange={(event) => setEmail(event.target.value)} 
           required
-          className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2"
+          className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
         />
       </div>
       <div className="mb-4">
@@ -70,10 +63,10 @@ return (
           type="password"
           id="password"
           name="password"
-          value={formData.password}
-          onChange={handleInputChange}
+          value={password}
+          onChange={(event) => setPassword(event.target.value)} 
           required
-          className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2"
+          className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
         />
       </div>
       <button
