@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { HiOutlineMail } from 'react-icons/hi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,26 +24,46 @@ const Navbar = () => {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <a
-                  href="/"
+                  href="/feed "
                   className="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900"
                 >
                   Feed
                 </a>
 
                 <a
-                  href="/post"
+                  href="/events"
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
                   Events
                 </a>
-
                 <a
-                  href="/contact"
+                  href="/direct-message"
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
-                  Contact
+                  DM
                 </a>
-                
+                <a
+                  href="/profiles"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                >
+                  Profiles
+                </a>
+                <a
+                  href="/prof"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                >
+                  prof
+                </a>
+                {/* <a
+                  href="/direct-message"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white  "
+                > */}
+               <div className="relative rounded-md text-sm font-medium text-gray-300 hover:text-white">
+                <span className="absolute top-0 left-0 text-red-500 bg-slate-200 rounded-full text-sm">5</span>
+                <HiOutlineMail className="h-6 w-6" />
+              </div> 
+                {/* </a> */}
+   
               <a
                   href="/login"
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
@@ -83,26 +104,41 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a
-              href="/"
+              href="/feed"
               className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900"
             >
               Feed
             </a>
 
             <a
-              href="/post"
+              href="/events"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
             >
               Events
             </a>
-
             <a
-              href="/contact"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+              href="/direct-message"
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
             >
-              Contact
+              DM
             </a>
-            
+            <a
+              href="/profiles"
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >
+              Profiles
+            </a>
+            <div className="relative">
+              <span className="absolute top-0 left-0 bg-red-600 text-white px-2 py-1 rounded-full text-xs">5</span>
+              <HiOutlineMail className="h-6 w-6" />
+            </div>   
+            <a
+              href="/direct-message"
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >
+              Messages
+            </a>
+                
             <a
                   href="/login"
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
