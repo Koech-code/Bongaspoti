@@ -3,26 +3,23 @@ import Navbar from './components/Navbar';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import RegistrationForm from './components/SignUp';
 import Login from './components/SignIn';
-import Post from './components/Post';
-// import HomePage from './components/HomePage';
+import DirectMessage from './components/DirectMessage';
+import EventPosts from './components/Posts';
+import Profiles from './components/Profiles';
+import MyProfile from './components/MyProfile';
 function App() {
   return (
-    // <div>
-    //   <div>
-    //     <Navbar/>
-    //   </div>
-    //   <div>
-    //     <HomePage/>
-    //   </div>
-    // </div>
     <div>
     <Navbar />
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/feed" element={<HomePage />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<Login />} />
-        <Route path='/post' element={<Post />}/>
+        <Route path='/direct-message' element={<DirectMessage/>}/>
+        <Route path='/events' element={<EventPosts/>}/>
+        <Route path='/profiles' element={<Profiles/>}/>
+        <Route path='/prof' element={<MyProfile/>}/>
       </Routes>
     </BrowserRouter>
 
