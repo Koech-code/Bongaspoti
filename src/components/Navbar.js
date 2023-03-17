@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { HiOutlineMail } from 'react-icons/hi';
+import axios from "axios";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -63,7 +65,16 @@ const Navbar = () => {
                 <HiOutlineMail className="h-6 w-6" />
               </div> 
                 {/* </a> */}
-   
+                <a href="/search">
+                <div className="flex items-center justify-center sm:justify-start">
+                  <svg className="w-6 h-6 mr-2 fill-current text-white sm:w-5 sm:h-3" viewBox="0 0 24 24">
+                    <path d="M10.5 0C4.701 0 0 4.701 0 10.5c0 5.799 4.701 10.5 10.5 10.5 2.412 0 4.629-.819 6.415-2.189l4.098 4.098a1.5 1.5 0 0 0 2.121-2.121l-4.098-4.098A10.417 10.417 0 0 0 21 10.5C21 4.701 16.299 0 10.5 0zm0 19.5c-4.142 0-7.5-3.358-7.5-7.5s3.358-7.5 7.5-7.5 7.5 3.358 7.5 7.5-3.358 7.5-7.5 7.5z"/>
+                  </svg>
+                  <span className="text-white text-sm font-medium">Search</span>
+                </div>
+                </a>
+
+
               <a
                   href="/login"
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
@@ -138,15 +149,23 @@ const Navbar = () => {
             >
               Messages
             </a>
-                
-            <a
-                  href="/login"
-                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                >
-                  Sign In
-                </a>
 
-                
+            <a href="/search">
+                <div className="flex items-center justify-center sm:justify-start ml-0">
+                  <svg className="w-6 h-6 mr-2 fill-current text-white sm:w-5 sm:h-3" viewBox="0 0 24 24">
+                    <path d="M10.5 0C4.701 0 0 4.701 0 10.5c0 5.799 4.701 10.5 10.5 10.5 2.412 0 4.629-.819 6.415-2.189l4.098 4.098a1.5 1.5 0 0 0 2.121-2.121l-4.098-4.098A10.417 10.417 0 0 0 21 10.5C21 4.701 16.299 0 10.5 0zm0 19.5c-4.142 0-7.5-3.358-7.5-7.5s3.358-7.5 7.5-7.5 7.5 3.358 7.5 7.5-3.358 7.5-7.5 7.5z"/>
+                  </svg>
+                  <span className="text-white text-sm font-medium">Search</span>
+                </div>
+            </a>   
+            <a
+              href="/login"
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+            >
+              Sign In
+            </a>
+
+            
                 <a
                   href="/register"
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"

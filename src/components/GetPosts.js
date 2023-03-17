@@ -8,23 +8,35 @@ const GetPosts = () => {
     const togglePopup = () => setIsOpen(!isOpen);
 
     const [content, setContent] = useState('');
+    // fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+    // .then((response) => response.json())
+    // .then((data) => {
+    //    console.log(data);
+    //    setPosts(data);
+    // })
+    // .catch((err) => {
+    //    console.log(err.message);
+    // });
+       
+    useEffect(()=>{
 
-
-    fetch('http://127.0.0.1:8000/api/feed', {
+      fetch('http://127.0.0.1:8000/api/feed', {
     
-    method: 'GET',
-    headers: {
-      Authorization: `Token ${localStorage.getItem('token')}`,
-    }
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
-        setTweets(data);
-    })
-    .catch((err) => {
-        console.log(err.message);
-    });
+      method: 'GET',
+      headers: {
+        Authorization: `Token ${localStorage.getItem('token')}`,
+      }
+      })
+      .then((response) => response.json())
+      .then((data) => {
+          console.log(data);
+          setTweets(data);
+      })
+      .catch((err) => {
+          console.log(err.message);
+      });
+    }, [])
+
     
 
   return (

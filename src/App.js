@@ -7,6 +7,9 @@ import DirectMessage from './components/DirectMessage';
 import EventPosts from './components/Posts';
 import Profiles from './components/Profiles';
 import MyProfile from './components/MyProfile';
+// import Search from './components/Search';
+import SearchResult from './components/SearchFrontend';
+
 function App() {
   return (
     <div>
@@ -20,6 +23,7 @@ function App() {
         <Route path='/events' element={<EventPosts/>}/>
         <Route path='/profiles' element={<Profiles/>}/>
         <Route path='/prof' element={<MyProfile/>}/>
+        <Route path='/search' element={<SearchResult/>}/>
       </Routes>
     </BrowserRouter>
 
