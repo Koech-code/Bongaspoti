@@ -60,10 +60,11 @@ const Navbar = () => {
                   href="/direct-message"
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white  "
                 > */}
-               <div className="relative rounded-md text-sm font-medium text-gray-300 hover:text-white">
+               {/* <div className="relative rounded-md text-sm font-medium text-gray-300 hover:text-white">
                 <span className="absolute top-0 left-0 text-red-500 bg-slate-200 rounded-full text-sm">5</span>
                 <HiOutlineMail className="h-6 w-6" />
-              </div> 
+              </div>  */}
+               
                 {/* </a> */}
                 <a href="/search">
                 <div className="flex items-center justify-center sm:justify-start">
@@ -88,6 +89,12 @@ const Navbar = () => {
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
                   Sign Up
+                </a>
+                <a
+                  href="/chats"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                >
+                  <HiOutlineMail className="h-6 w-6" />
                 </a>
               </div>
               

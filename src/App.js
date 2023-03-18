@@ -9,6 +9,11 @@ import Profiles from './components/Profiles';
 import MyProfile from './components/MyProfile';
 // import Search from './components/Search';
 import SearchResult from './components/SearchFrontend';
+import ChatBox from './components/Chats';
+import ProfileFeeds from './components/ProfileFeeds';
+import Journals from './components/Journals';
+import ProfileAcademics from './components/ProfileAcademics';
+import ProfileAchievements from './components/ProfileAchievements';
 
 function App() {
   return (
@@ -21,9 +26,15 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path='/direct-message' element={<DirectMessage/>}/>
         <Route path='/events' element={<EventPosts/>}/>
-        <Route path='/profiles' element={<Profiles/>}/>
-        <Route path='/prof' element={<MyProfile/>}/>
+        <Route  path='/profiles' element={<Profiles/>} />
+        <Route path='/prof' element={<MyProfile/>}>
+          <Route path='feeds' element={<ProfileFeeds/>}/>
+          <Route path='journals' element={<Journals/>}/>
+          <Route path='academics' element={<ProfileAcademics/>}/>
+          <Route path='achievements' element={<ProfileAchievements/>}/>
+        </Route>
         <Route path='/search' element={<SearchResult/>}/>
+        <Route path='/chats' element={<ChatBox/>}/>
       </Routes>
     </BrowserRouter>
 
