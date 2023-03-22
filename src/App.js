@@ -14,6 +14,7 @@ import ProfileFeeds from './components/ProfileFeeds';
 import Journals from './components/Journals';
 import ProfileAcademics from './components/ProfileAcademics';
 import ProfileAchievements from './components/ProfileAchievements';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
     <Navbar />
     <BrowserRouter>
       <Routes>
+        <Route  path='' element={<Home/>} />
         <Route path="/feed" element={<HomePage />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<Login />} />
