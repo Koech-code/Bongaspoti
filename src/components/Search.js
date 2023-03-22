@@ -17,8 +17,10 @@ function Search({ query }) {
         },
       );
       setResults(response.data.results);
+     
     }
     getSearchResults();
+    setResults('')
   }, [query]);
 //     const [results, setResults] = useState([])
 //     const [query, setQuery] = useState('')
@@ -95,3 +97,55 @@ function Search({ query }) {
 }
 
 export default Search
+
+// import React, { useState } from "react";
+
+// function StkPushForm() {
+//   const [phoneNumber, setPhoneNumber] = useState("");
+//   const [amount, setAmount] = useState("");
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     fetch("/stk-push/", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         phoneNumber,
+//         amount,
+//       }),
+//     })
+//       .then((response) => response.json())
+//       .then((data) => {
+//         // Handle response here
+//       })
+//       .catch((error) => {
+//         console.error("Error:", error);
+//       });
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <label>
+//         Phone Number:
+//         <input
+//           type="text"
+//           value={phoneNumber}
+//           onChange={(event) => setPhoneNumber(event.target.value)}
+//         />
+//       </label>
+//       <label>
+//         Amount:
+//         <input
+//           type="text"
+//           value={amount}
+//           onChange={(event) => setAmount(event.target.value)}
+//         />
+//       </label>
+//       <button type="submit">Pay</button>
+//     </form>
+//   );
+// }
+
+// export default StkPushForm;
