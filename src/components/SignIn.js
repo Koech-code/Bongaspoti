@@ -43,7 +43,7 @@ function Login() {
 
 return (
     <form onSubmit={handleSubmit} className="max-w-lg mx-auto shadow-lg rounded-lg mt-4 pl-4 pr-4 pb-4 pt-4">
-      <div className="mb-4 mt-10">
+      <div className="mb-4">
         <label htmlFor="username" className="block font-medium mb-2  ">
           Username
         </label>

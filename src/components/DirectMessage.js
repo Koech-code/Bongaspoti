@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import Cal from "./Calendar";
 
 function DirectMessage() {
   const [sender, setSender] = useState("");
@@ -70,7 +69,6 @@ function DirectMessage() {
       >
         Send
       </button>
-      <Cal/>
     </form>
   );
 }

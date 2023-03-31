@@ -2,7 +2,16 @@ import React from 'react'
 import backgroundImage from '../images/home.png'
 import footerBackgroundImage from '../images/Footer-bg.png'
 import apple from '../images/apple.jpg'
+import {useNavigate} from 'react-router-dom';
+
 const Home = () => {
+  const navigate = useNavigate();
+
+  const navigateRegistrationPage = () => {
+    // 👇️ navigate to /profiles
+    navigate('/registration');
+  };
+
   return (
 //     <div
 //     className="h-screen object-cover"
@@ -21,7 +30,7 @@ const Home = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-0"></div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
         <h1 className="text-5xl font-bold text-white mb-8">PERFORMANCE AT ELITE LEVEL</h1>
-        <button className="px-8 py-4 bg-[#5F9EA0]  text-white font-bold rounded hover:bg-green-500 hover:text-white">GET STARTED</button>
+        <button onClick={navigateRegistrationPage} className="px-8 py-4 bg-[#5F9EA0]  text-white font-bold rounded hover:bg-green-500 hover:text-white">GET STARTED</button>
       </div>
       </div>
       <div className="bg-white rounded-lg shadow-md p-4 m-8">
@@ -58,7 +67,7 @@ const Home = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-0"></div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
         <h1 className="text-5xl font-bold text-white mb-8">TRY THE FREE ASSESSMENT</h1>
-        <button className="px-8 py-4 bg-[#5F9EA0]  text-white font-bold rounded hover:bg-green-500 hover:text-white">NOW!</button>
+        <button onClick={navigateRegistrationPage} className="px-8 py-4 bg-[#5F9EA0]  text-white font-bold rounded hover:bg-green-500 hover:text-white">NOW!</button>
       </div>
       </div>
 

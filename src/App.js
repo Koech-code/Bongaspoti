@@ -5,6 +5,7 @@ import RegistrationForm from './components/SignUp';
 import Login from './components/SignIn';
 import DirectMessage from './components/DirectMessage';
 import EventPosts from './components/Posts';
+
 import Profiles from './components/Profiles';
 import MyProfile from './components/MyProfile';
 // import Search from './components/Search';
@@ -16,24 +17,30 @@ import ProfileAcademics from './components/ProfileAcademics';
 import ProfileAchievements from './components/ProfileAchievements';
 import Home from './components/Home';
 
+// import academicInfo from './components/academicInfo';
+
+import PersonalInformation from './components/PersonalInformation';
+import ContactDetails from './components/ContactDetails';
+import AcademicInformation from './components/AcademicInformation';
+
 function App() {
   return (
     <div>
     <Navbar />
     <BrowserRouter>
       <Routes>
-        <Route  path='' element={<Home/>} />
+        <Route  path='/' element={<Home/>} />
         <Route path="/feed" element={<HomePage />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<Login />} />
         <Route path='/direct-message' element={<DirectMessage/>}/>
         <Route path='/events' element={<EventPosts/>}/>
-        <Route  path='/profiles' element={<Profiles/>} />
-        <Route path='/prof' element={<MyProfile/>}>
-          <Route path='feeds' element={<ProfileFeeds/>}/>
-          <Route path='journals' element={<Journals/>}/>
-          <Route path='academics' element={<ProfileAcademics/>}/>
-          <Route path='achievements' element={<ProfileAchievements/>}/>
+        <Route path='/registration' element={<MyProfile />} />
+        <Route path='/prof' element={<Profiles/>}>
+          {/* <Route path='profeeds' element={<ProfileFeeds/>}/>
+          <Route path='projournals' element={<Journals/>}/>
+          <Route path='proacademics' element={<ProfileAcademics/>}/>
+          <Route path='proachievements' element={<ProfileAchievements/>}/> */}
         </Route>
         <Route path='/search' element={<SearchResult/>}/>
         <Route path='/chats' element={<ChatBox/>}/>
