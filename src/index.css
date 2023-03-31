@@ -12,3 +12,20 @@
     hover:bg-transparent hover:text-indigo-600 rounded-md
   }
 }
+
+/* add this to your CSS file or your styles section */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* fix the container */
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

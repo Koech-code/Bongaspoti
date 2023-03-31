@@ -20,7 +20,6 @@ import 'slick-carousel/slick/slick-theme.css';
   };
 
   return (
-    // <div className="relative h-screen">
       <Slider {...settings}>
           <div>
             <PersonalInformation/>
@@ -38,7 +37,7 @@ import 'slick-carousel/slick/slick-theme.css';
             <EstablishContact/>
           </div>
       </Slider>
-    // </div>
+
   );
 };
 

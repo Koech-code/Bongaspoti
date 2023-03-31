@@ -23,12 +23,12 @@ const PersonalInformation = () => {
   //   navigate('/');
   // };
   return (
-  <div className='container-sm mb-4 overflow-hidden'>
+  <div className='container-sm mb-4 overflow-hidden '>
        {/* <Outlet></Outlet> */}
       <p className='text-green-600 text-5xl text-center mt-10 mb-6'>LETS GET TO KNOW YOU</p>
       <div className="flex flex-wrap -mx-4">
         <div className="w-1/3 ml-auto bg-[#F9FBFC] m-2 p-4 rounded-md">
-          <div className="flex flex-wrap p-2">
+          <div className="flex flex-wrap p-2 w-1/3">
             
           <div className='pr-2'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#016400" class="w-6 h-6">

@@ -58,14 +58,14 @@ function Search({ query }) {
   return (
     <div>
         
-          <form >
+          <form>
             <div className="relative">
             <input
                 type="text"
                 // value={query}
                 // onChange = {handleInputChange}
                 placeholder="Search"
-                className="bg-white text-gray-900 rounded-full focus:border-none py-2 pr-4 pl-10 block w-full leading-5 border border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                className="bg-white text-gray-900 focus:border-green-600 rounded-full focus:border-none py-2 pr-4 pl-10 block w-full leading-5 border border-green-600 focus:outline-none focus:shadow-outline-blue transition duration-150 ease-in-out sm:text-sm sm:leading-5"
             />
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center">
                 <button type="submit" className="border-none">

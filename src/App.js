@@ -22,10 +22,10 @@ import Home from './components/Home';
 import PersonalInformation from './components/PersonalInformation';
 import ContactDetails from './components/ContactDetails';
 import AcademicInformation from './components/AcademicInformation';
-
+import KnowAthlete from './components/KnowAthlete';
 function App() {
   return (
-    <div>
+    <div className="max-w-screen my-0 ">
     <Navbar />
     <BrowserRouter>
       <Routes>
@@ -36,6 +36,7 @@ function App() {
         <Route path='/direct-message' element={<DirectMessage/>}/>
         <Route path='/events' element={<EventPosts/>}/>
         <Route path='/registration' element={<MyProfile />} />
+        <Route path='/athletes' element={<KnowAthlete/>}/>
         <Route path='/prof' element={<Profiles/>}>
           {/* <Route path='profeeds' element={<ProfileFeeds/>}/>
           <Route path='projournals' element={<Journals/>}/>
