@@ -1,8 +1,9 @@
 import React from 'react'
 import athlete from '../images/Frame 13.png'
 import knowathletefooter from '../images/knowAthleteFooter.png'
-import {ReactComponent as Icon} from '../images/Vector.svg'
+import Footer from './Footer'
 import {useNavigate} from 'react-router-dom'
+
 const KnowAthlete = () => {
     const navigate = useNavigate();
 
@@ -77,6 +78,18 @@ const KnowAthlete = () => {
     </div>
 
 </div>
+<div className="relative h-64 mt-10 sm:object-fill">
+      <img
+        className="absolute top-0 left-0 w-full h-full object-cover sm:object-fill md:object-fill"
+        src={knowathletefooter}
+        alt="background"
+      />
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-0"></div> */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+        <h1 className=" sm:text-2xl lg:text-4xl md:text-5xl font-bold text-white text-center mt-8 sm:mt-4 md:mt-16 mb-8 md:mb-12">TRY THE FREE ASSESSMENT</h1>
+        <button className="px-8 py-4 bg-[#2BAE76]  text-white font-bold rounded hover:bg-green-500 hover:text-white">NOW!</button>      </div>
+      </div>
+    <Footer />
 </div>
   )
 }
