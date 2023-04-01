@@ -135,6 +135,12 @@ const Navbar = () => {
             >
               Registration
             </a>
+            <a
+              href="/athletes"
+              className="text-white px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Know Athlete
+            </a>
             <a href="/search">
                 <div className="flex justify-self-auto text-white px-3 py-2 rounded-md text-base font-medium">
                   <svg className="w-6 h-6 mr-2 fill-current text-white sm:w-5 sm:h-3" viewBox="0 0 24 24">
