@@ -11,7 +11,7 @@ const KnowAthlete = () => {
       navigate('/registration');
     };
   return (
-    <div className='sm:w-full sm:h-full md:w-full md:h-full lg:w-full lg:h-full sm:text-center'>
+    <div className='sm:w-full sm:h-full md:w-full md:h-full lg:w-full lg:h-full sm:text-center '>
        <p className='bg-[#22354D] md:px-8 lg:px-24 sm:text-1xl text-white md:text-4xl font-bold text-center md:mt-2 mb-8 md:mb-12 p-24'>
             Get to know our athletes
         </p> 
@@ -24,12 +24,13 @@ const KnowAthlete = () => {
                 </div>
             </div>
         </div>
-        <div class="flex items-center justify-center mt-6 md:mt-6 sm:mt-6 lg:mt-6">
+        <div class="sm:h-full sm:w-full flex flex-wrap items-center justify-center mt-6 md:mt-6 sm:mt-6 lg:mt-6">
   <div class="relative">
     <select class="block appearance-none bg-gray-50 border border-gray-400 hover:border-purple-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
       <option disabled selected>Please Select</option>
-      <option>Option 2</option>
-      <option>Option 3</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Choose not to say</option>
     </select>
     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
       <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 14l-5-5h10l-5 5z"/></svg>
@@ -39,19 +40,44 @@ const KnowAthlete = () => {
   <div class="relative ml-6">
     <select class="block appearance-none bg-gray-50 border border-gray-400 hover:border-purple-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
       <option disabled selected>Please Select</option>
-      <option>Option 2</option>
-      <option>Option 3</option>
+      <option>Track and Field</option>
+      <option>Swimming</option>
     </select>
     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
       <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 14l-5-5h10l-5 5z"/></svg>
     </div>
   </div>
+  <div className="flex justify-center items-center ml-6 sm:mt-2 md:mt-2 mt-1">
+        <button  className="flex items-center gap-1 bg-green-500 hover:bg-green-600 hover:text-white text-white font-medium py-2 px-4 rounded-md">
+            Next
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>    
+        </button>
+    </div>
 </div>
-
+<div class=" flex flex-wrap items-center justify-center">
+    <div className='text-start w-2/3'>
+        <p className='text-2xl bold'>Why choose our athletes</p>
+          <p>Awesome Name is composed of high-level 
+          athletes who are working to further promote the college sports of by bringing 
+          competitive depth to the U.S. In any aspect from TOEFL to the VISA we assist 
+          you to secure a smooth recruiting process. Concretely we make sure that 
+          athletes are 100% committed to an engagement in the U.S. so that they will 
+          response quickly to your questions and will certainly come to your university, 
+          if you provide a matching offer. The preparation of our athletes for the TOEFL 
+          and SAT Test combined with our support for NCAA clearance and the application 
+          process for your university makes your job a lot easier and more enjoyable. 
+          Our athletic profiles provide you at first glance with the most important 
+          athletic and academic information. Additionally our
+          profiles include authentic weblinks to verify the athlete`s achievements.</p>
+    </div>
+    <div>
+        <img className="w-60 h-48 " src={athlete} alt="Your image alt text" />
+    </div>
 
 </div>
-
-
+</div>
   )
 }
 
