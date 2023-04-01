@@ -20,24 +20,26 @@ import 'slick-carousel/slick/slick-theme.css';
   };
 
   return (
-      <Slider {...settings}>
-          <div>
-            <PersonalInformation/>
-          </div>
-          <div>
-            <ContactDetails/>
-          </div>
-          <div>
-            <AthleteInformation/>
-          </div>
-          <div>
-            <AcademicInformation/>
-          </div>
-          <div>
-            <EstablishContact/>
-          </div>
-      </Slider>
-
+    <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-8">
+    <Slider {...settings} className="mt-8 border-none focus:border-none">
+      <div>
+        <PersonalInformation />
+      </div>
+      <div>
+        <ContactDetails />
+      </div>
+      <div>
+        <AthleteInformation />
+      </div>
+      <div>
+        <AcademicInformation />
+      </div>
+      <div>
+        <EstablishContact />
+      </div>
+    </Slider>
+  </div>
+  
   );
 };
 

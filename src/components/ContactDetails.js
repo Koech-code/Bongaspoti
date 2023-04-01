@@ -20,7 +20,7 @@ const ContactDetails = () => {
   return (
   <div className='container-sm mb-4 overflow-hidden'>
        {/* <Outlet></Outlet> */}
-      <p className='text-green-600 text-5xl text-center mt-10 mb-6'>LETS GET TO KNOW YOU</p>
+      <p className='text-green-600 text-center mt-10 mb-6 md:text-5xl text:sm sm:text-base'>LETS GET TO KNOW YOU</p>
       <div className="flex flex-wrap -mx-4">
         <div className="w-1/3 ml-auto bg-[#F9FBFC] m-2 p-4 rounded-md">
           <div className="flex flex-wrap p-2">

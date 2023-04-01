@@ -25,10 +25,11 @@ const PersonalInformation = () => {
   return (
   <div className='container-sm mb-4 overflow-hidden '>
        {/* <Outlet></Outlet> */}
-      <p className='text-green-600 text-5xl text-center mt-10 mb-6'>LETS GET TO KNOW YOU</p>
+      <p className='text-green-600  md:text-5xl text-center mt-10 mb-6 text:sm sm:text-base'>LETS GET TO KNOW YOU</p>
+      {/* <p className='text-green-600 text-3xl text-center mt-6 mb-3 sm:mt-10 sm:mb-6 sm:text-base'>LETS GET TO KNOW YOU</p> */}
       <div className="flex flex-wrap -mx-4">
-        <div className="w-1/3 ml-auto bg-[#F9FBFC] m-2 p-4 rounded-md">
-          <div className="flex flex-wrap p-2 w-1/3">
+        <div className="ml-auto bg-[#F9FBFC] m-2 p-4 rounded-md">
+          <div className="flex flex-wrap p-2 ">
             
           <div className='pr-2'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#016400" class="w-6 h-6">
@@ -37,7 +38,7 @@ const PersonalInformation = () => {
           </div>
 
             <div className="w-1/3 mr-auto">
-              <p className='font-semibold'>Personal Information</p>
+              <p className='font-semibold '>Personal Information</p>
             </div>
             <p className='p-2'>Please provide name, home country and date of birth</p>
 
@@ -100,7 +101,7 @@ const PersonalInformation = () => {
           </div>
             <button className='bg-[#F4F4F4] ml-8 text-green-500 font-semibold pr-10 pl-10 p-3 justify-center'>Already have an account?</button>
         </div>
-        <div className="w-1/3 mr-auto">
+        <div className="w-1/3 mr-auto ml-4">
         <form className="max-w-md mx-auto">
         <p className='font-semibold text-2xl p-4 ml-4'>Personal Information</p>
         <div className="mb-4">
