@@ -22,7 +22,7 @@ const AthleteInformation = () => {
         LETS GET TO KNOW YOU
       </p>
       <div className="flex flex-wrap -mx-4">
-        <div className="w-1/3 ml-auto bg-[#F9FBFC] m-2 p-4 rounded-md">
+        <div className=" ml-auto bg-[#F9FBFC] m-2 p-4 rounded-md">
           <div className="flex flex-wrap p-2">
             <div className="pr-2">
               <svg
@@ -41,7 +41,7 @@ const AthleteInformation = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold text-gray-300">
                 Personal Information
               </p>
@@ -68,7 +68,7 @@ const AthleteInformation = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold text-gray-300">Contact Details</p>
             </div>
             <p className="p-2 text-gray-300">
@@ -93,7 +93,7 @@ const AthleteInformation = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold">Athletic Information</p>
             </div>
             <p className="p-2">
@@ -145,7 +145,7 @@ const AthleteInformation = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold text-gray-300">
                 Establishing Contact
               </p>
@@ -158,7 +158,7 @@ const AthleteInformation = () => {
             Already have an account?
           </button>
         </div>
-        <div className="w-1/3 mr-auto">
+        <div className=" mr-auto ml-10">
           <form className="max-w-md mx-auto">
             <p className="font-semibold text-2xl p-4 ml-4">
               Athlete Information

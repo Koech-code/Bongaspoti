@@ -176,9 +176,9 @@ const PersonalInformation = () => {
                 First Name
               </label>
               <input
-                type="password"
-                id="password"
-                name="password"
+                type="text"
+                id="firstname"
+                name="firstname"
                 // value={password}
                 // onChange={(event) => setPassword(event.target.value)}
                 // required
@@ -190,9 +190,9 @@ const PersonalInformation = () => {
                 Last Name
               </label>
               <input
-                type="password"
-                id="password"
-                name="password"
+                type="text"
+                id="lastname"
+                name="lastname"
                 // value={password}
                 // onChange={(event) => setPassword(event.target.value)}
                 // required

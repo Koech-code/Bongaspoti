@@ -17,13 +17,13 @@ const ContactDetails = () => {
   };
 
   return (
-    <div className="container-sm mb-4 overflow-hidden">
+    <div className=" mb-4 overflow-hidden">
       {/* <Outlet></Outlet> */}
       <p className="text-green-600 text-center mt-10 mb-6 md:text-5xl text:sm sm:text-base">
         LETS GET TO KNOW YOU
       </p>
       <div className="flex flex-wrap -mx-4">
-        <div className="w-1/3 ml-auto bg-[#F9FBFC] m-2 p-4 rounded-md">
+        <div className=" ml-auto bg-[#F9FBFC] m-2 p-4 rounded-md">
           <div className="flex flex-wrap p-2">
             <div className="pr-2">
               <svg
@@ -42,7 +42,7 @@ const ContactDetails = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold text-gray-300">
                 Personal Information
               </p>
@@ -69,7 +69,7 @@ const ContactDetails = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold">Contact Details</p>
             </div>
             <p className="p-2">
@@ -94,7 +94,7 @@ const ContactDetails = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold text-gray-300">
                 Athletic Information
               </p>
@@ -148,7 +148,7 @@ const ContactDetails = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold text-gray-300">
                 Establishing Contact
               </p>
@@ -161,7 +161,7 @@ const ContactDetails = () => {
             Already have an account?
           </button>
         </div>
-        <div className="w-1/3 mr-auto">
+        <div className=" mr-auto  ml-10">
           <form className="max-w-md mx-auto">
             <p className="font-semibold text-2xl p-4 ml-4">Contact Details</p>
             <div className="mb-4">
@@ -194,8 +194,8 @@ const ContactDetails = () => {
                 className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
               />
             </div>
-            <div className="flex justify-between mt-40">
-              <div class="self-start">
+            <div className="flex justify-between mt-40 ">
+              <div className="self-start ">
                 {/* <Link to="/personalInfo"> */}
                 <button
                   onClick={navigatePersonalInfo}
