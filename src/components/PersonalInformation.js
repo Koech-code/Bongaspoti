@@ -23,13 +23,13 @@ const PersonalInformation = () => {
     navigate("/registration/contacts");
   };
   return (
-    <div className="container-sm mb-4 overflow-hidden ">
+    <div className=" mb-4 overflow-hidden ">
       {/* <Outlet></Outlet> */}
       <p className="text-green-600  md:text-5xl text-center mt-10 mb-6 text:sm sm:text-base">
         LETS GET TO KNOW YOU
       </p>
       {/* <p className='text-green-600 text-3xl text-center mt-6 mb-3 sm:mt-10 sm:mb-6 sm:text-base'>LETS GET TO KNOW YOU</p> */}
-      <div className="flex flex-wrap -mx-4">
+      <div className="flex flex-wrap -mx-4 ">
         <div className="ml-auto bg-[#F9FBFC] m-2 p-4 rounded-md">
           <div className="flex flex-wrap p-2 ">
             <div className="pr-2">
@@ -49,7 +49,7 @@ const PersonalInformation = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold ">Personal Information</p>
             </div>
             <p className="p-2">
@@ -74,7 +74,7 @@ const PersonalInformation = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold text-gray-300">Contact Details</p>
             </div>
             <p className="p-2 text-gray-300">
@@ -99,7 +99,7 @@ const PersonalInformation = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold text-gray-300">
                 Athletic Information
               </p>
@@ -153,7 +153,7 @@ const PersonalInformation = () => {
               </svg>
             </div>
 
-            <div className="w-1/3 mr-auto">
+            <div className="w-2/3 mr-auto">
               <p className="font-semibold text-gray-300">
                 Establishing Contact
               </p>
@@ -166,7 +166,7 @@ const PersonalInformation = () => {
             Already have an account?
           </button>
         </div>
-        <div className="w-1/3 mr-auto ml-4">
+        <div className="mr-auto ml-10">
           <form className="max-w-md mx-auto">
             <p className="font-semibold text-2xl p-4 ml-4">
               Personal Information
