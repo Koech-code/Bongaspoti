@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link, Outlet} from "react-router-dom";
 import {CheckCircleIcon} from "@heroicons/react/solid";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 const ContactDetails = () => {
   const navigate = useNavigate();
@@ -11,9 +12,41 @@ const ContactDetails = () => {
     navigate("/registration/personalInfo");
   };
 
-  const navigateToAthletesInfo = () => {
-    // 👇️ navigate to /
-    navigate("/registration/athletesInfo");
+  // const navigateToAthletesInfo = () => {
+  //   // 👇️ navigate to /
+  //   navigate("/registration/athletesInfo");
+  // };
+
+  const [emailaddress, setEmailAddress] = useState();
+  const [phonenumber, setPhoneNumber] = useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("emailaddress", emailaddress);
+    formData.append("phonenumber", phonenumber);
+
+    try {
+      await axios.post(
+        "http://127.0.0.1:8000/api/profiles/contactdetails/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            // Authorization: `Token ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      alert("Your contact details have saved successfully!");
+      navigate("/registration/athletesInfo");
+    } catch (error) {
+      console.error(error);
+      alert(
+        "Failed to save contact details, make sure to full all fields correctly."
+      );
+    }
   };
 
   return (
@@ -162,7 +195,7 @@ const ContactDetails = () => {
           </button>
         </div>
         <div className=" mr-auto  ml-10">
-          <form className="max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
             <p className="font-semibold text-2xl p-4 ml-4">Contact Details</p>
             <div className="mb-4">
               <label htmlFor="email" className="block font-medium mb-2">
@@ -172,9 +205,9 @@ const ContactDetails = () => {
                 type="email"
                 id="email"
                 name="email"
-                // value={password}
-                // onChange={(event) => setPassword(event.target.value)}
-                // required
+                value={emailaddress}
+                onChange={(event) => setEmailAddress(event.target.value)}
+                required
                 placeholder="nixon@gmail.com"
                 className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
               />
@@ -187,9 +220,9 @@ const ContactDetails = () => {
                 type="number"
                 id="phonenumber"
                 name="phonenumber"
-                // value={password}
-                // onChange={(event) => setPassword(event.target.value)}
-                // required
+                value={phonenumber}
+                onChange={(event) => setPhoneNumber(event.target.value)}
+                required
                 placeholder="0700222738"
                 className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
               />
@@ -222,7 +255,7 @@ const ContactDetails = () => {
               <div class="self-end">
                 {/* <Link to="/athletesInfo"> */}
                 <button
-                  onClick={navigateToAthletesInfo}
+                  // onClick={navigateToAthletesInfo}
                   className="flex items-center gap-1 bg-green-500 hover:bg-green-600 hover:text-white text-white font-medium py-2 px-4 rounded-md"
                 >
                   Next

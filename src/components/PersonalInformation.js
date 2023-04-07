@@ -2,6 +2,7 @@ import React, {useState, useRef, useEffect} from "react";
 import {Link, Outlet} from "react-router-dom";
 import {CheckCircleIcon} from "@heroicons/react/solid";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 const PersonalInformation = () => {
   const navigate = useNavigate();
@@ -19,9 +20,43 @@ const PersonalInformation = () => {
   //   navigate("contacts");
   // };
 
-  const handleNextPage = () => {
-    navigate("/registration/contacts");
+  // const [personalInfo, setPersonalInfoData] = useState();
+  const [firstname, setFirstname] = useState();
+  const [lastname, setLastname] = useState();
+  const [country, setCoutry] = useState();
+  const [city, setCity] = useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("firstname", firstname);
+    formData.append("lastname", lastname);
+    formData.append("country", country);
+    formData.append("city", city);
+
+    try {
+      await axios.post(
+        "http://127.0.0.1:8000/api/profiles/personalinformation/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            // Authorization: `Token ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      alert("Your personal information has been saved successfully!");
+      navigate("/registration/contacts");
+    } catch (error) {
+      console.error(error);
+      alert(
+        "Failed to save personal information, make sure to full all fields correctly."
+      );
+    }
   };
+
   return (
     <div className=" mb-4 overflow-hidden ">
       {/* <Outlet></Outlet> */}
@@ -167,7 +202,7 @@ const PersonalInformation = () => {
           </button>
         </div>
         <div className="mr-auto ml-10">
-          <form className="max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
             <p className="font-semibold text-2xl p-4 ml-4">
               Personal Information
             </p>
@@ -177,11 +212,10 @@ const PersonalInformation = () => {
               </label>
               <input
                 type="text"
-                id="firstname"
                 name="firstname"
-                // value={password}
-                // onChange={(event) => setPassword(event.target.value)}
-                // required
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
+                required
                 className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
               />
             </div>
@@ -191,11 +225,10 @@ const PersonalInformation = () => {
               </label>
               <input
                 type="text"
-                id="lastname"
                 name="lastname"
-                // value={password}
-                // onChange={(event) => setPassword(event.target.value)}
-                // required
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
+                required
                 className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
               />
             </div>
@@ -210,6 +243,9 @@ const PersonalInformation = () => {
                 <select
                   className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none"
                   id="home"
+                  value={country}
+                  onChange={(e) => setCoutry(e.target.value)}
+                  required
                 >
                   <option disabled selected>
                     Home
@@ -228,6 +264,9 @@ const PersonalInformation = () => {
                 <select
                   className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none"
                   id="city"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  required
                 >
                   <option disabled selected>
                     City
@@ -241,7 +280,7 @@ const PersonalInformation = () => {
             <div class="flex justify-end mt-6">
               {/* <Link to="contacts"> */}
               <button
-                onClick={handleNextPage}
+                // onClick={handleNextPage}
                 className="flex items-center gap-1 bg-green-500 hover:bg-green-600 hover:text-white text-white font-medium py-2 px-4 rounded-md"
               >
                 Next

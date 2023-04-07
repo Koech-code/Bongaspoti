@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect} from "react";
 import {Link, Outlet} from "react-router-dom";
 import {CheckCircleIcon} from "@heroicons/react/solid";
 import {useNavigate} from "react-router-dom";
-
+import axios from "axios";
 const AcademicInformation = () => {
   const navigate = useNavigate();
 
@@ -13,9 +13,47 @@ const AcademicInformation = () => {
     navigate("/registration/athletesInfo");
   };
 
-  const navigateToEstablishingContact = () => {
-    // 👇️ navigate to establishing contacts page
-    navigate("/registration/establishingContact");
+  // const navigateToEstablishingContact = () => {
+  //   // 👇️ navigate to establishing contacts page
+  //   navigate("/registration/establishingContact");
+  // };
+
+  const [graduationYear, setGraduationYear] = useState();
+  const [certificate, setCertificate] = useState();
+  const [cert, setCert] = useState();
+  const [repeated, setRepeated] = useState();
+  const [city, setCity] = useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("graduationYear", graduationYear);
+    formData.append("certificate", certificate);
+    formData.append("cert", cert);
+    formData.append("repeated", repeated);
+    formData.append("city", city);
+
+    try {
+      await axios.post(
+        "http://127.0.0.1:8000/api/profiles/academicinformation/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            // Authorization: `Token ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      alert("Your academic information has been saved successfully!");
+      navigate("/registration/establishingContact");
+    } catch (error) {
+      console.error(error);
+      alert(
+        "Failed to save your academic information, make sure to full all fields correctly."
+      );
+    }
   };
 
   return (
@@ -162,7 +200,7 @@ const AcademicInformation = () => {
           </button>
         </div>
         <div className=" ml-5 mr-5">
-          <form className="max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
             <p className="font-semibold text-2xl p-4 ml-4">
               Academic Information
             </p>
@@ -174,9 +212,9 @@ const AcademicInformation = () => {
                 type="number"
                 id="year"
                 name="year"
-                // value={password}
-                // onChange={(event) => setPassword(event.target.value)}
-                // required
+                value={graduationYear}
+                onChange={(event) => setGraduationYear(event.target.value)}
+                required
                 className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
               />
             </div>
@@ -189,9 +227,9 @@ const AcademicInformation = () => {
                 type="text"
                 id="certificate"
                 name="cerificate"
-                // value={password}
-                // onChange={(event) => setPassword(event.target.value)}
-                // required
+                value={certificate}
+                onChange={(event) => setCertificate(event.target.value)}
+                required
                 className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
               />
             </div>
@@ -208,13 +246,14 @@ const AcademicInformation = () => {
                   <select
                     className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none"
                     id="home"
+                    value={cert}
+                    onChange={(event) => setCert(event.target.value)}
                   >
                     <option disabled selected>
                       Home
                     </option>
-                    <option>Kenya</option>
-                    <option>USA</option>
-                    <option>Japan</option>
+                    <option>Yes</option>
+                    <option>No</option>
                   </select>
                 </div>
               </div>
@@ -230,6 +269,8 @@ const AcademicInformation = () => {
                   <select
                     className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none"
                     id="city"
+                    value={repeated}
+                    onChange={(event) => setRepeated(event.target.value)}
                   >
                     <option disabled selected>
                       City
@@ -249,6 +290,8 @@ const AcademicInformation = () => {
                 <select
                   className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none"
                   id="city"
+                  value={city}
+                  onChange={(event) => setCity(event.target.value)}
                 >
                   <option disabled selected>
                     Please select
@@ -287,7 +330,7 @@ const AcademicInformation = () => {
               <div class="self-end">
                 {/* <Link to="/establishingContact"> */}
                 <button
-                  onClick={navigateToEstablishingContact}
+                  // onClick={navigateToEstablishingContact}
                   className="flex items-center gap-1 bg-green-500 hover:bg-green-600 hover:text-white text-white font-medium py-2 px-4 rounded-md"
                 >
                   Next

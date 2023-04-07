@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link, Outlet} from "react-router-dom";
 import {CheckCircleIcon} from "@heroicons/react/solid";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 const AthleteInformation = () => {
   const navigate = useNavigate();
@@ -11,9 +12,39 @@ const AthleteInformation = () => {
     navigate("/registration/contacts");
   };
 
-  const navigateToAcademics = () => {
-    // 👇️ navigate to /
-    navigate("/registration/academicInfo");
+  // const navigateToAcademics = () => {
+  //   // 👇️ navigate to /
+  //   navigate("/registration/academicInfo");
+  // };
+
+  const [events, setEvents] = useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("events", events);
+
+    try {
+      await axios.post(
+        "http://127.0.0.1:8000/api/profiles/athleteinformation/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            // Authorization: `Token ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      alert("The event you participate in has been captured!");
+      navigate("/registration/academicInfo");
+    } catch (error) {
+      console.error(error);
+      alert(
+        "Failed to save the event you participate in, make sure to full all fields correctly."
+      );
+    }
   };
   return (
     <div className="container-sm mb-4 overflow-hidden">
@@ -159,7 +190,7 @@ const AthleteInformation = () => {
           </button>
         </div>
         <div className=" mr-auto ml-10">
-          <form className="max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
             <p className="font-semibold text-2xl p-4 ml-4">
               Athlete Information
             </p>
@@ -171,9 +202,9 @@ const AthleteInformation = () => {
                 type="text"
                 id="events"
                 name="events"
-                // value={password}
-                // onChange={(event) => setPassword(event.target.value)}
-                // required
+                value={events}
+                onChange={(event) => setEvents(event.target.value)}
+                required
                 placeholder="The events you participate in"
                 className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
               />
@@ -206,7 +237,7 @@ const AthleteInformation = () => {
               <div class="self-end">
                 {/* <Link to="/academicInfo"> */}
                 <button
-                  onClick={navigateToAcademics}
+                  // onClick={navigateToAcademics}
                   className="flex items-center gap-1 bg-green-500 hover:bg-green-600 hover:text-white text-white font-medium py-2 px-4 rounded-md"
                 >
                   Next

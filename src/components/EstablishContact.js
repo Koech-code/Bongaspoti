@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect} from "react";
 import {Link, Outlet} from "react-router-dom";
 import {CheckCircleIcon} from "@heroicons/react/solid";
 import {useNavigate} from "react-router-dom";
-
+import axios from "axios";
 const EstablishContact = () => {
   const navigate = useNavigate();
 
@@ -11,7 +11,41 @@ const EstablishContact = () => {
     navigate("/registration/academicInfo");
   };
 
-  const handleSubmit = () => {};
+  const [consultationMeans, setConsultationMeans] = useState();
+  const [communicationMeans, setCommunicationMeans] = useState();
+  const [contactLanguage, setContactLanguage] = useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("consultationMeans", consultationMeans);
+    formData.append("communicationMeans", communicationMeans);
+    formData.append("contactLanguage", contactLanguage);
+
+    try {
+      await axios.post(
+        "http://127.0.0.1:8000/api/profiles/establishingcontact/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            // Authorization: `Token ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      alert("Your contact means has been saved successfully!");
+      alert("Thank you for taking time to fill all our registration forms.");
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+      alert(
+        "Failed to save your contact means, make sure to full all fields correctly."
+      );
+    }
+  };
+
   return (
     <div className="container-sm mb-4 overflow-hidden">
       {/* <Outlet></Outlet> */}
@@ -159,7 +193,7 @@ const EstablishContact = () => {
           </button>
         </div>
         <div className="ml-5 mr-5">
-          <form className="max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
             <p className="font-semibold text-2xl p-4 ml-4">
               Establishing Contact
             </p>
@@ -174,6 +208,8 @@ const EstablishContact = () => {
                 <select
                   className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none"
                   id="home"
+                  value={consultationMeans}
+                  onChange={(event) => setConsultationMeans(event.target.value)}
                 >
                   <option disabled selected>
                     Please Select
@@ -192,9 +228,9 @@ const EstablishContact = () => {
                 type="text"
                 id="name"
                 name="name"
-                // value={password}
-                // onChange={(event) => setPassword(event.target.value)}
-                // required
+                value={communicationMeans}
+                onChange={(event) => setCommunicationMeans(event.target.value)}
+                required
                 className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
               />
             </div>
@@ -210,6 +246,9 @@ const EstablishContact = () => {
                 <select
                   className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none"
                   id="city"
+                  value={contactLanguage}
+                  onChange={(event) => setContactLanguage(event.target.value)}
+                  required
                 >
                   <option disabled selected>
                     Please Select
@@ -248,24 +287,10 @@ const EstablishContact = () => {
               <div class="self-end">
                 {/* <Link to="/establishingContact"> */}
                 <button
-                  onClick={handleSubmit}
+                  // onClick={handleSubmit}
                   className="flex items-center gap-1 bg-green-500 hover:bg-green-600 hover:text-white text-white font-medium py-2 px-4 rounded-md"
                 >
                   Submit
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                    />
-                  </svg>
                 </button>
                 {/* </Link> */}
               </div>

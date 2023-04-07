@@ -89,8 +89,8 @@ const KnowAthlete = () => {
           </button>
         </div>
       </div>
-      <div class=" flex flex-wrap items-center justify-center">
-        <div className="text-start w-2/3">
+      <div class=" flex flex-wrap justify-evenly items-center  mt-4">
+        <div className="text-start w-1/3 self-start">
           <p className="text-2xl bold">Why choose our athletes</p>
           <p>
             Awesome Name is composed of high-level athletes who are working to
@@ -109,7 +109,11 @@ const KnowAthlete = () => {
           </p>
         </div>
         <div>
-          <img className="w-60 h-48 " src={athlete} alt="Your image alt text" />
+          <img
+            className="w-60 self-end "
+            src={athlete}
+            alt="Your image alt text"
+          />
         </div>
       </div>
       <div className="relative h-64 mt-10 sm:object-fill">
