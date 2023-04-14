@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 
-function SearchResults({ results }) {
+function SearchResults({results}) {
   const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
@@ -23,6 +23,6 @@ function SearchResults({ results }) {
       </div>
     </div>
   );
-} 
+}
 
 export default SearchResults;

@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import {Routes, Route, BrowserRouter, Navigate} from "react-router-dom";
 import RegistrationForm from "./components/SignUp";
 import Login from "./components/SignIn";
-import DirectMessage from "./components/DirectMessage";
 import EventPosts from "./components/Posts";
 
 import Profiles from "./components/Profiles";
@@ -16,8 +15,11 @@ import Journals from "./components/Journals";
 import ProfileAcademics from "./components/ProfileAcademics";
 import ProfileAchievements from "./components/ProfileAchievements";
 import Home from "./components/Home";
-
+import GetAcademicInfo from "./components/GetAcademicInfo";
+import GetAthletesInfo from "./components/GetAthletesInfo";
 // import academicInfo from './components/academicInfo';
+import AthletesMediaPosts from "./components/AthletesMediaPosts";
+import AthletesPersonal from "./components/AthletesPersonal";
 
 import PersonalInformation from "./components/PersonalInformation";
 import ContactDetails from "./components/ContactDetails";
@@ -26,6 +28,7 @@ import AthleteInformation from "./components/AthleteInformation";
 import EstablishContact from "./components/EstablishContact";
 import KnowAthlete from "./components/KnowAthlete";
 import Athlete from "./components/Athletes";
+import MyTeam from "./components/MyTeam";
 
 function App() {
   return (
@@ -37,7 +40,6 @@ function App() {
           <Route path="/feed" element={<HomePage />} />
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/direct-message" element={<DirectMessage />} />
           <Route path="/events" element={<EventPosts />} />
           <Route path="/registration" element={<MyProfile />}>
             <Route index element={<Navigate to="personalInfo" replace />} />
@@ -50,12 +52,15 @@ function App() {
 
           <Route path="/knowathlete" element={<KnowAthlete />} />
           <Route path="/athletes" element={<Athlete />} />
-          <Route path="/prof" element={<Profiles />}>
-            {/* <Route path='profeeds' element={<ProfileFeeds/>}/>
-          <Route path='projournals' element={<Journals/>}/>
-          <Route path='proacademics' element={<ProfileAcademics/>}/>
-          <Route path='proachievements' element={<ProfileAchievements/>}/> */}
+          <Route path="/profiles" element={<Profiles />}>
+            <Route index element={<Navigate to="athletesInfo" replace />} />
+            <Route path="athletesInfo" element={<GetAthletesInfo />} />
+            <Route path="projournals" element={<Journals />} />
+            <Route path="media" element={<AthletesMediaPosts />} />
+            <Route path="personal" element={<AthletesPersonal />} />
+            <Route path="academics" element={<GetAcademicInfo />} />
           </Route>
+          <Route path="/team" element={<MyTeam />} />
           <Route path="/search" element={<SearchResult />} />
           <Route path="/chats" element={<ChatBox />} />
         </Routes>

@@ -43,12 +43,7 @@ const Navbar = () => {
                 >
                   Events
                 </a>
-                <a
-                  href="/direct-message"
-                  className="text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  DM
-                </a>
+
                 <a
                   href="/registration"
                   className="text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -69,10 +64,16 @@ const Navbar = () => {
                   Atheletes
                 </a>
                 <a
-                  href="/prof"
+                  href="/profiles"
                   className="text-white px-3 py-2 rounded-md text-sm font-medium "
                 >
-                  prof
+                  profiles
+                </a>
+                <a
+                  href="/team"
+                  className="text-white px-3 py-2 rounded-md text-sm font-medium "
+                >
+                  My-Team
                 </a>
                 <a href="/search">
                   <div className="flex items-center justify-center sm:justify-start">
@@ -143,12 +144,7 @@ const Navbar = () => {
             >
               Events
             </a>
-            <a
-              href="/direct-message"
-              className="text-white px-3 py-2 rounded-md text-sm font-medium "
-            >
-              DM
-            </a>
+
             <a
               href="/registration"
               className="text-white block px-3 py-2 rounded-md text-base font-medium"

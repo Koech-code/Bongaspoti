@@ -6,9 +6,12 @@ import {Routes, Router, Route} from "react-router-dom";
 import Journals from "./Journals";
 import {Link, Outlet} from "react-router-dom";
 import Footer from "./Footer";
+import { Parsedotly } from "styled-icons/simple-icons";
+import { Alert } from "@material-tailwind/react";
+
 const Profiles = () => {
   const [profile, setProfile] = useState([]);
-
+  
   const FollowButton = () => {
     return (
       <button className="bg-black text-white py-2 px-4 rounded-lg">
@@ -36,18 +39,10 @@ const Profiles = () => {
 
   const MailIcon = () => {
     return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path
-          fillRule="evenodd"
-          d="M17 4H3a2 2 0 00-2 2v8a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zM3 6h14l-7 4.276L3 6zm0 8v-5.724l6.297 3.862L3 14zm14 0l-6.297-3.862L17 8.276V14z"
-          clipRule="evenodd"
-        />
-      </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+    </svg>
+
     );
   };
 
@@ -62,33 +57,8 @@ const Profiles = () => {
       .then((data) => setProfile(data))
       .catch((err) => console.log(`Error: ${err}`));
   }, []);
-  // fetch('http://127.0.0.1:8000/api/feed', {
-
-  // method: 'GET',
-  // headers: {
-  //   Authorization: `Token ${localStorage.getItem('token')}`,
-  // }
-  // })
-  // .then((response) => response.json())
-  // .then((data) => {
-  //     console.log(data);
-  //     setTweets(data);
-  // })
-  // .catch((err) => {
-  //     console.log(err.message);
-  // });
 
   return (
-    // <div>
-    //      {profile.map((item)=>{
-    //         return(
-    //             <div key={item.id}>
-    //                 <p>{item.First_name}</p>
-    //                 <p>{item.Last_name}</p>
-    //             </div>
-    //         )
-    //      })}
-    // </div>
     <div>
       <div className="max-w-md mx-auto mt-4 bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
         <img
@@ -135,16 +105,28 @@ const Profiles = () => {
               Feeds
       
             </a> */}
-              <Link className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-500 mr-6">
+              <Link
+                to="athletesInfo"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-500 mr-6"
+              >
                 Athletics
               </Link>
-              <Link className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-500 mr-6">
+              <Link
+                to="media"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-500 mr-6"
+              >
                 Media
               </Link>
-              <Link className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-500 mr-6">
+              <Link
+                to="personal"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-500 mr-6"
+              >
                 Personal
               </Link>
-              <Link className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-500 mr-6">
+              <Link
+                to="academics"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-green-500 mr-6"
+              >
                 Academics
               </Link>
               {/* <Outlet /> */}

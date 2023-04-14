@@ -49,7 +49,7 @@ const MyProfile = () => {
             Feeds
             
           </a> */}
-            <Link
+            {/* <Link
               to="personalInfo"
               onSubmit={handlePersonalInfoSubmit}
               className="block mt-4  lg:inline-block lg:mt-0 hover:text-green-500 mr-6"
@@ -80,7 +80,7 @@ const MyProfile = () => {
               className="block mt-4 lg:inline-block lg:mt-0  hover:text-green-500 mr-6"
             >
               Establishing Contact
-            </Link>
+            </Link> */}
             {/* <Outlet /> */}
           </div>
         </div>
