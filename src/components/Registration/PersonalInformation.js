@@ -2,9 +2,9 @@ import React, {useState} from "react";
 
 function PersonalInformation({formData, setFormData, updateValidationStatus}) {
   return (
-    <div>
-      <div>
-        <form className="max-w-md mx-auto ">
+    <div className="">
+      <div className=" ml-5 mr-5">
+        <form className="max-w-md mx-auto">
           <div className="mb-4">
             <label htmlFor="firstname" className="block font-medium mb-2">
               First Name
@@ -18,7 +18,7 @@ function PersonalInformation({formData, setFormData, updateValidationStatus}) {
                 setFormData({...formData, firtsname: inputVal});
                 updateValidationStatus(inputVal !== "");
               }}
-              className="w-full border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
+              className="w-96 border-gray-400 border-solid border-2 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600"
             />
           </div>
           <div className="mb-4">

@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import Slider from "react-slick";
 
-import PersonalInformation from "./PersonalInformation";
-import ContactDetails from "./ContactDetails";
-import AthleteInformation from "./AthleteInformation";
-import AcademicInformation from "./AcademicInformation";
-import EstablishContact from "./EstablishContact";
+// import PersonalInformation from "./PersonalInformation";
+// import ContactDetails from "./ContactDetails";
+// import AthleteInformation from "./AthleteInformation";
+// import AcademicInformation from "./AcademicInformation";
+// import EstablishContact from "./EstablishContact";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Link, Outlet} from "react-router-dom";

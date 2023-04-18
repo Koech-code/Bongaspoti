@@ -1,36 +1,36 @@
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Navbar";
 import {Routes, Route, BrowserRouter, Navigate} from "react-router-dom";
-import RegistrationForm from "./components/SignUp";
-import Login from "./components/SignIn";
+import RegistrationForm from "./components/Authentication/SignUp";
+import Login from "./components/Authentication/SignIn";
 import EventPosts from "./components/Posts";
 
 import Profiles from "./components/Profiles";
 import MyProfile from "./components/MyProfile";
 // import Search from './components/Search';
-import SearchResult from "./components/SearchFrontend";
-import ChatBox from "./components/Chats";
+import SearchResult from "./components/Search/SearchFrontend";
+// import ChatBox from "./components/Chats";
 import ProfileFeeds from "./components/ProfileFeeds";
 import Journals from "./components/Journals";
 import ProfileAcademics from "./components/ProfileAcademics";
 import ProfileAchievements from "./components/ProfileAchievements";
-import Home from "./components/Home";
-import GetAcademicInfo from "./components/GetAcademicInfo";
-import GetAthletesInfo from "./components/GetAthletesInfo";
+import Home from "./components/Home/Home";
+import GetAcademicInfo from "./components/Profiles/GetAcademicInfo";
+import GetAthletesInfo from "./components/Profiles/GetAthletesInfo";
 // import academicInfo from './components/academicInfo';
-import AthletesMediaPosts from "./components/AthletesMediaPosts";
-import AthletesPersonal from "./components/AthletesPersonal";
+import AthletesMediaPosts from "./components/Profiles/AthletesMediaPosts";
+import AthletesPersonal from "./components/Profiles/AthletesPersonal";
 
-import PersonalInformation from "./components/PersonalInformation";
-import ContactDetails from "./components/ContactDetails";
-import AcademicInformation from "./components/AcademicInformation";
-import AthleteInformation from "./components/AthleteInformation";
-import EstablishContact from "./components/EstablishContact";
-import KnowAthlete from "./components/KnowAthlete";
-import Athlete from "./components/Athletes";
+// import PersonalInformation from "./components/PersonalInformation";
+// import ContactDetails from "./components/ContactDetails";
+// import AcademicInformation from "./components/AcademicInformation";
+// import AthleteInformation from "./components/AthleteInformation";
+// import EstablishContact from "./components/EstablishContact";
+import KnowAthlete from "./components/Athletes/KnowAthlete";
+import Athlete from "./components/Athletes/Athletes";
 import MyTeam from "./components/MyTeam";
-import Registration from "./components/Registration";
-import RefinedRegForm from "./components/RefinedRegForm";
+// import Registration from "./components/Registration";
+import RefinedRegForm from "./components/Registration/RefinedRegForm";
 
 function App() {
   return (
@@ -62,7 +62,7 @@ function App() {
           </Route>
           <Route path="/team" element={<MyTeam />} />
           <Route path="/search" element={<SearchResult />} />
-          <Route path="/chats" element={<ChatBox />} />
+          {/* <Route path="/chats" element={<ChatBox />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
