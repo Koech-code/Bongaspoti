@@ -29,7 +29,7 @@ const ContactDetails = () => {
 
     try {
       await axios.post(
-        "http://95.179.222.128/api/profiles/contactdetails/",
+        "http://127.0.0.1:8000/api/profiles/contactdetails/",
         formData,
         {
           headers: {

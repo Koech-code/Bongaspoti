@@ -8,7 +8,7 @@ function Search({query}) {
   useEffect(() => {
     async function getSearchResults() {
       const response = await axios.get(
-        `http://95.179.222.128/search?q=${query}`,
+        `http://127.0.0.1:8000/search?q=${query}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",

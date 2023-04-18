@@ -49,7 +49,7 @@ function SearchResult() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://95.179.222.128/search?q=${query}`)
+    fetch(`http://127.0.0.1:8000/search?q=${query}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

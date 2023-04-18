@@ -29,6 +29,8 @@ import EstablishContact from "./components/EstablishContact";
 import KnowAthlete from "./components/KnowAthlete";
 import Athlete from "./components/Athletes";
 import MyTeam from "./components/MyTeam";
+import Registration from "./components/Registration";
+import RefinedRegForm from "./components/RefinedRegForm";
 
 function App() {
   return (
@@ -41,15 +43,13 @@ function App() {
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/events" element={<EventPosts />} />
-          <Route path="/registration" element={<MyProfile />}>
-            <Route index element={<Navigate to="personalInfo" replace />} />
+          <Route path="/registration" element={<RefinedRegForm />} />
+          {/* <Route index element={<Navigate to="personalInfo" replace />} />
             <Route path="personalInfo" element={<PersonalInformation />} />
             <Route path="contacts" element={<ContactDetails />} />
             <Route path="athletesInfo" element={<AthleteInformation />} />
             <Route path="academicInfo" element={<AcademicInformation />} />
-            <Route path="establishingContact" element={<EstablishContact />} />
-          </Route>
-
+            <Route path="establishingContact" element={<EstablishContact />} /> */}
           <Route path="/knowathlete" element={<KnowAthlete />} />
           <Route path="/athletes" element={<Athlete />} />
           <Route path="/profiles" element={<Profiles />}>

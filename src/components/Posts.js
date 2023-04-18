@@ -16,7 +16,7 @@ const EventPosts = () => {
 
   const [events, setEvents] = useState([]);
   useEffect(() => {
-    fetch("http://95.179.222.128/api/events/all_events/")
+    fetch("http://127.0.0.1:8000/api/events/all_events/")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

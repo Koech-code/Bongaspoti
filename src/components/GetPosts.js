@@ -25,7 +25,7 @@ const GetPosts = () => {
   // });
 
   useEffect(() => {
-    fetch("http://95.179.222.128/api/feed", {
+    fetch("http://127.0.0.1:8000/api/feed", {
       method: "GET",
       headers: {
         Authorization: `Token ${localStorage.getItem("token")}`,
