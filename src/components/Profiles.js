@@ -8,8 +8,14 @@ import {Link, Outlet} from "react-router-dom";
 import Footer from "./Footer";
 import {Parsedotly} from "styled-icons/simple-icons";
 import {Alert} from "@material-tailwind/react";
+import {HiDotsVertical} from "react-icons/hi";
 
 const Profiles = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleDropdown() {
+    setIsOpen(!isOpen);
+  }
   const [profile, setProfile] = useState([]);
 
   const FollowButton = () => {
@@ -90,16 +96,59 @@ const Profiles = () => {
               </div>
             </div>
             <div className="self-end mb-4">
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="15" cy="8" r="2" fill="#000" />
-                <circle cx="15" cy="15" r="2" fill="#000" />
-                <circle cx="15" cy="22" r="2" fill="#000" />
-              </svg>
+              <div className="relative">
+                <button
+                  className="text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  onClick={toggleDropdown}
+                >
+                  <HiDotsVertical className="w-6 h-6" />
+                </button>
+                {isOpen && (
+                  <div className="absolute top-1/2 right-0 mr-8 transform -translate-y-1/2 z-10  py-2 ml-2 bg-white rounded-md shadow-lg">
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-4"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
+                        />
+                      </svg>
+                      Edit
+                    </a>
+
+                    <a
+                      href="#"
+                      class="inline-flex items-center px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9"
+                        />
+                      </svg>
+                      Save
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <p className="mt-4 text-gray-700 text-base">
