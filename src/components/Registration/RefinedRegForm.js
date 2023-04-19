@@ -6,7 +6,7 @@ import AthleteInformation from "./AthleteInformation";
 import AcademicInformation from "./AcademicInformation";
 import EstablishContact from "./EstablishContact";
 import {useNavigate} from "react-router-dom";
-import Progress from "./Progress";
+
 const RefinedRegForm = () => {
   const navigate = useNavigate();
   const [page, setPage] = useState(0);
@@ -380,11 +380,11 @@ const RefinedRegForm = () => {
               className={`flex self-start items-center gap-1 py-2 px-4 rounded-md ${
                 page === 0
                   ? "hidden"
-                  : "bg-green-500 hover:bg-green-600 hover:text-white text-white font-medium"
+                  : "bg-white text-green-500 hover:bg-white hover:text-green-700 font-medium"
               }`}
               style={{visibility: page === 0 ? "hidden" : "visible"}}
             >
-              {page > 0 ? "Prev" : ""}
+              {page > 0 ? "Back" : ""}
             </button>
 
             <button

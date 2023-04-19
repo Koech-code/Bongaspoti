@@ -44,6 +44,48 @@ const Navbar = () => {
                   Events
                 </a>
 
+                <div class="relative inline-block text-left group">
+                  <a class="inline-flex justify-center w-full px-4 py-2 text-white">
+                    Athletes
+                    <svg
+                      class="w-5 h-5 ml-2 -mr-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.707 14.707a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L11 12.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <div class="hidden absolute left-0 w-56 mt-2 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none group-hover:block">
+                    <div
+                      class="py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="options-menu"
+                    >
+                      <a
+                        href="/athletes"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Our Athletes
+                      </a>
+                      <a
+                        href="/knowathlete"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Know Athlete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
                 <a
                   href="/registration"
                   className="text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -51,7 +93,7 @@ const Navbar = () => {
                   Registration
                 </a>
 
-                <a
+                {/* <a
                   href="/knowathlete"
                   className="text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
@@ -62,13 +104,8 @@ const Navbar = () => {
                   className="text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Atheletes
-                </a>
-                <a
-                  href="/profiles"
-                  className="text-white px-3 py-2 rounded-md text-sm font-medium "
-                >
-                  profiles
-                </a>
+                </a> */}
+
                 <a
                   href="/team"
                   className="text-white px-3 py-2 rounded-md text-sm font-medium "
@@ -89,7 +126,64 @@ const Navbar = () => {
                   </div>
                 </a>
 
-                <a
+                <div class="relative inline-block text-left group">
+                  <a class="inline-flex justify-center w-full px-4 py-2 text-white">
+                    Accounts
+                    <svg
+                      class="w-5 h-5 ml-2 -mr-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.707 14.707a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L11 12.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <div class="hidden absolute left-0 w-56 mt-2 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none group-hover:block">
+                    <div
+                      class="py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="options-menu"
+                    >
+                      <a
+                        href="/register"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Sign Up
+                      </a>
+                      <a
+                        href="/login"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Sign In
+                      </a>
+                      <a
+                        href="/profiles"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Profile
+                      </a>
+                      <hr />
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Sign Out
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* <a
                   href="/login"
                   className="text-white px-3 py-2 rounded-md text-sm font-medium "
                 >
@@ -101,7 +195,7 @@ const Navbar = () => {
                   className="text-white px-3 py-2 rounded-md text-sm font-medium "
                 >
                   Sign Up
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -163,6 +257,12 @@ const Navbar = () => {
               className="text-white px-3 py-2 rounded-md text-sm font-medium"
             >
               Atheletes
+            </a>
+            <a
+              href="/profiles"
+              className="text-white px-3 py-2 rounded-md text-sm font-medium "
+            >
+              Profiles
             </a>
             <a href="/search">
               <div className="flex justify-self-auto text-white px-3 py-2 rounded-md text-base font-medium">

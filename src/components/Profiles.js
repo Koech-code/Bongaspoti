@@ -6,12 +6,12 @@ import {Routes, Router, Route} from "react-router-dom";
 import Journals from "./Journals";
 import {Link, Outlet} from "react-router-dom";
 import Footer from "./Footer";
-import { Parsedotly } from "styled-icons/simple-icons";
-import { Alert } from "@material-tailwind/react";
+import {Parsedotly} from "styled-icons/simple-icons";
+import {Alert} from "@material-tailwind/react";
 
 const Profiles = () => {
   const [profile, setProfile] = useState([]);
-  
+
   const FollowButton = () => {
     return (
       <button className="bg-black text-white py-2 px-4 rounded-lg">
@@ -39,10 +39,20 @@ const Profiles = () => {
 
   const MailIcon = () => {
     return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-    </svg>
-
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+        />
+      </svg>
     );
   };
 
@@ -67,20 +77,29 @@ const Profiles = () => {
           alt="Cover Image"
         />
         <div className="px-4 py-4">
-          <div className="flex items-center">
-            <img
-              className="w-12 h-12 rounded-full mr-4 object-cover"
-              src={profimage}
-              alt="Profile Image"
-            />
-            <div>
-              <p className="font-bold text-xl text-gray-900">Nick Koech</p>
-              <p className="text-gray-700 text-sm">Track and Field</p>
+          <div className=" flex justify-between">
+            <div className="self-start flex items-center">
+              <img
+                className="w-12 h-12 rounded-full mr-4 object-cover"
+                src={profimage}
+                alt="Profile Image"
+              />
+              <div>
+                <p className="font-bold text-xl text-gray-900">Nick Koech</p>
+                <p className="text-gray-700 text-sm">Track and Field</p>
+              </div>
             </div>
-            <div className="flex justify-evenly">
-              <ThreeDotIcon />
-              <MailIcon />
-              <FollowButton />
+            <div className="self-end mb-4">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="15" cy="8" r="2" fill="#000" />
+                <circle cx="15" cy="15" r="2" fill="#000" />
+                <circle cx="15" cy="22" r="2" fill="#000" />
+              </svg>
             </div>
           </div>
           <p className="mt-4 text-gray-700 text-base">
