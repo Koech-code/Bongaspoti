@@ -1,6 +1,6 @@
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Navbar";
-import {Routes, Route, BrowserRouter, Navigate} from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import RegistrationForm from "./components/Authentication/SignUp";
 import Login from "./components/Authentication/SignIn";
 import EventPosts from "./components/Posts";
@@ -31,7 +31,8 @@ import Athlete from "./components/Athletes/Athletes";
 import MyTeam from "./components/MyTeam";
 // import Registration from "./components/Registration";
 import RefinedRegForm from "./components/Registration/RefinedRegForm";
-
+import VideoList from "./components/Registration/Videos";
+import GetPosts from "./components/GetPosts";
 function App() {
   return (
     <div className="max-w-screen my-0 ">
@@ -50,6 +51,7 @@ function App() {
             <Route path="athletesInfo" element={<AthleteInformation />} />
             <Route path="academicInfo" element={<AcademicInformation />} />
             <Route path="establishingContact" element={<EstablishContact />} /> */}
+          <Route path="/videos" element={<VideoList />} />
           <Route path="/knowathlete" element={<KnowAthlete />} />
           <Route path="/athletes" element={<Athlete />} />
           <Route path="/profiles" element={<Profiles />}>
@@ -62,6 +64,7 @@ function App() {
           </Route>
           <Route path="/team" element={<MyTeam />} />
           <Route path="/search" element={<SearchResult />} />
+          <Route path="/video/posts" element={<GetPosts />} />
           {/* <Route path="/chats" element={<ChatBox />} /> */}
         </Routes>
       </BrowserRouter>

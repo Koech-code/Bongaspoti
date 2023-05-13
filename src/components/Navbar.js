@@ -43,6 +43,12 @@ const Navbar = () => {
                 >
                   Events
                 </a>
+                <a
+                  href="/videos"
+                  className="text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Videos
+                </a>
 
                 <div class="relative inline-block text-left group">
                   <a class="inline-flex justify-center w-full px-4 py-2 text-white">

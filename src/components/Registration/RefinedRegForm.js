@@ -1,13 +1,20 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import PersonalInformation from "./PersonalInformation";
 import ContactDetails from "./ContactDetails";
 import AthleteInformation from "./AthleteInformation";
 import AcademicInformation from "./AcademicInformation";
 import EstablishContact from "./EstablishContact";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+// third party package
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RefinedRegForm = () => {
+
+  const [submitted, setSubmitted] = useState(false);
+
   const navigate = useNavigate();
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
@@ -52,6 +59,8 @@ const RefinedRegForm = () => {
       return <EstablishContact formData={formData} setFormData={setFormData} />;
     }
   };
+
+
   const submitFormData = async (formData) => {
     try {
       axios.post("http://127.0.0.1:8000/api/profiles/profile/", formData, {
@@ -60,13 +69,22 @@ const RefinedRegForm = () => {
           // Authorization: `Token ${localStorage.getItem("token")}`,
         },
       });
-      alert("Your registration information has been saved successfully!");
-      navigate("/profiles");
+
+      // navigate('/profiles')
+
     } catch (error) {
       console.error(error);
-      alert(
-        "Failed to save your registration information. Please try again later."
-      );
+      toast.error("Failed to save your registration information. Please try again later.", {
+        position: "top-left",
+        autoClose: 500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
     }
   };
 
@@ -377,12 +395,11 @@ const RefinedRegForm = () => {
               onClick={() => {
                 setPage((currentPage) => currentPage - 1);
               }}
-              className={`flex self-start items-center gap-1 py-2 px-4 rounded-md ${
-                page === 0
-                  ? "hidden"
-                  : "bg-white text-green-500 hover:bg-white hover:text-green-700 font-medium"
-              }`}
-              style={{visibility: page === 0 ? "hidden" : "visible"}}
+              className={`flex self-start items-center gap-1 py-2 px-4 rounded-md ${page === 0
+                ? "hidden"
+                : "bg-white text-green-500 hover:bg-white hover:text-green-700 font-medium"
+                }`}
+              style={{ visibility: page === 0 ? "hidden" : "visible" }}
             >
               {page > 0 ? "Back" : ""}
             </button>
@@ -390,7 +407,14 @@ const RefinedRegForm = () => {
             <button
               onClick={() => {
                 if (page === FormTitles.length - 1) {
-                  submitFormData(formData);
+                  submitFormData(formData)
+                    .then(() => {
+                      toast.success('Your registration information has been saved successfully!');
+
+                    })
+                    .catch((error) => {
+                      toast.error(`Error submitting form: ${error.message}`);
+                    });
                 } else {
                   setPage((currentPage) => currentPage + 1);
                 }
@@ -399,10 +423,23 @@ const RefinedRegForm = () => {
             >
               {page === FormTitles.length - 1 ? "Submit" : "Next"}
             </button>
+            <ToastContainer
+              // theme="dark"
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
